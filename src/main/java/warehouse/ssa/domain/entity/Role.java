@@ -2,14 +2,18 @@ package warehouse.ssa.domain.entity;
 
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 import java.sql.Date;
 import java.util.List;
 
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString()
 @Entity
-@Table(name = "role")
+@Table(name = "users")
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

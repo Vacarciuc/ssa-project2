@@ -1,20 +1,26 @@
 package warehouse.ssa.domain.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 import java.sql.Date;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
-
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString(exclude = "role")
 @Entity
 @Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
-    private Date createdAt;
+    @Temporal(TemporalType.TIMESTAMP)
+    private LocalDate createdAt;
     private Date updatedAt;
     private boolean isActive;
     private String firstName;
