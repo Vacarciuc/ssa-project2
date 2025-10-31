@@ -8,10 +8,7 @@ import java.util.List;
 @Data
 @Entity
 @Table(name = "category")
-public class Category {
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
+public class Category extends BaseEntity{
     private String name;
     private String description;
     @OneToMany(mappedBy = "category")

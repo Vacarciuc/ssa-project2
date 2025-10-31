@@ -15,14 +15,7 @@ import java.util.List;
 @ToString(exclude = "role")
 @Entity
 @Table(name = "users")
-public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
-    @Temporal(TemporalType.TIMESTAMP)
-    private LocalDate createdAt;
-    private Date updatedAt;
-    private boolean isActive;
+public class User extends BaseEntity{
     private String firstName;
     private String lastName;
     private String email;
@@ -37,4 +30,24 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "permission_id")
     )
     private List<Permission> permissionList;
+
+    public String getFirstName() {
+        return this.firstName;
+    }
+
+    public String getLastName() {
+        return this.lastName;
+    }
+
+    public String getEmail() {
+        return this.email;
+    }
+
+    public String getPassword() {
+        return this.password;
+    }
+
+    public void setId(){
+
+    }
 }

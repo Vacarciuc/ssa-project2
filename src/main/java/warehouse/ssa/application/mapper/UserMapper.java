@@ -1,6 +1,4 @@
 package warehouse.ssa.application.mapper;
-
-
 import org.springframework.stereotype.Component;
 import warehouse.ssa.application.dto.UserResponseDTO;
 import warehouse.ssa.domain.entity.User;

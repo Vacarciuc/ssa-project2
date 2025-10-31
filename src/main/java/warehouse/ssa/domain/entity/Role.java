@@ -1,10 +1,7 @@
 package warehouse.ssa.domain.entity;
 
-
 import jakarta.persistence.*;
 import lombok.*;
-
-import java.sql.Date;
 import java.util.List;
 
 @Getter
@@ -13,16 +10,14 @@ import java.util.List;
 @AllArgsConstructor
 @ToString()
 @Entity
-@Table(name = "users")
-public class Role {
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
-    private Date createdAt;
-    private Date updatedAt;
-    private boolean isActive;
-    private String name;
+@Table(name = "role")
+public class Role extends BaseEntity {
+
+    @Enumerated(EnumType.STRING)
+    private RoleEnum name;
+
     private String description;
+
     @OneToMany(mappedBy = "role")
     private List<User> userList;
 }
