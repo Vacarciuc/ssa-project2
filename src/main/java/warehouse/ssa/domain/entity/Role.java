@@ -1,24 +1,23 @@
 package warehouse.ssa.domain.entity;
 
-
 import jakarta.persistence.*;
-import lombok.Data;
-
-import java.sql.Date;
+import lombok.*;
 import java.util.List;
 
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString()
 @Entity
 @Table(name = "role")
-public class Role {
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
-    private Date createdAt;
-    private Date updatedAt;
-    private boolean isActive;
-    private String name;
+public class Role extends BaseEntity {
+
+    @Enumerated(EnumType.STRING)
+    private RoleEnum name;
+
     private String description;
+
     @OneToMany(mappedBy = "role")
     private List<User> userList;
 }

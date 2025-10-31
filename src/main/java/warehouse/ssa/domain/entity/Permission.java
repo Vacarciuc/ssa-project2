@@ -9,14 +9,8 @@ import java.util.List;
 @Data
 @Entity
 @Table(name = "permissions")
-public class Permission {
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
-    private Date createdAt;
-    private Date updatedAt;
-    private boolean isActive;
-    private Method method;
+public class Permission extends BaseEntity{
+    private MethodEnum method;
     private String description;
     @ManyToMany(mappedBy = "permissionList")
     private List<User> userList;

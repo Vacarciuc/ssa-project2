@@ -8,13 +8,7 @@ import java.sql.Date;
 @Data
 @Entity
 @Table(name = "products")
-public class Product {
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
-    private Date createdAt;
-    private Date updatedAt;
-    private boolean isActive;
+public class Product extends BaseEntity{
     private String name;
     private String description;
     private float price;
