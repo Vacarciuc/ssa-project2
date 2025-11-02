@@ -47,7 +47,27 @@ public class User extends BaseEntity{
         return this.password;
     }
 
-    public void setId(){
+    public void setPassword(String password){
+        this.password = password;
+    }
 
+    public void setRole(Role role){
+        this.role = role;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Role getRole(){
+        return this.role;
     }
 }

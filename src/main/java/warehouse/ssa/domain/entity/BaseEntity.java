@@ -27,8 +27,8 @@ public abstract class BaseEntity implements Serializable {
     @Column(name = "updated_at", nullable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime updatedAt;
 
-    @Column(name = "is_active", columnDefinition = "boolean DEFAULT true")
-    private boolean isActive;
+    @Column(name = "is_active", columnDefinition = "boolean default true")
+    private boolean isActive = true;
 
     public UUID getId(){
         return this.id;
