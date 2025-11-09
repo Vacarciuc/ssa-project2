@@ -1,25 +1,20 @@
-package warehouse.ssa.domain.entity;
+package warehouse.ssa.application.dto;
 
-import jakarta.persistence.*;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import warehouse.ssa.domain.entity.Category;
 
-import java.sql.Date;
-
-@Data
-@Entity
-@Table(name = "products")
-public class Product extends BaseEntity{
+@Getter
+@Setter
+public class CreateProductDTO {
     private String name;
     private String description;
-    private float price;
-    private int units;
-    @Column(name = "serial_number")
-    private String serialNumber;
     private String inventoryNumber;
+    private String serialNumber;
     private String columnNumber;
     private String rowNumber;
-    @ManyToOne()
-    @JoinColumn(name = "categoryId")
+    private int units;
+    private double price;
     private Category category;
 
     public String getName() {
@@ -38,20 +33,12 @@ public class Product extends BaseEntity{
         this.description = description;
     }
 
-    public float getPrice() {
-        return price;
+    public String getInventoryNumber() {
+        return inventoryNumber;
     }
 
-    public void setPrice(float price) {
-        this.price = price;
-    }
-
-    public int getUnits() {
-        return units;
-    }
-
-    public void setUnits(int units) {
-        this.units = units;
+    public void setInventoryNumber(String inventoryNumber) {
+        this.inventoryNumber = inventoryNumber;
     }
 
     public String getSerialNumber() {
@@ -60,14 +47,6 @@ public class Product extends BaseEntity{
 
     public void setSerialNumber(String serialNumber) {
         this.serialNumber = serialNumber;
-    }
-
-    public String getInventoryNumber() {
-        return inventoryNumber;
-    }
-
-    public void setInventoryNumber(String inventoryNumber) {
-        this.inventoryNumber = inventoryNumber;
     }
 
     public String getColumnNumber() {
@@ -84,6 +63,22 @@ public class Product extends BaseEntity{
 
     public void setRowNumber(String rowNumber) {
         this.rowNumber = rowNumber;
+    }
+
+    public int getUnits() {
+        return units;
+    }
+
+    public void setUnits(int units) {
+        this.units = units;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     public Category getCategory() {

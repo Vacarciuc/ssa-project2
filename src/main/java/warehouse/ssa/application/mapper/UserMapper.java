@@ -9,7 +9,6 @@ import java.util.List;
 @Component
 public class UserMapper {
     public UserResponseDTO toResponseDTO(User user){
-        System.out.println(user);
         UserResponseDTO dto = new UserResponseDTO();
         dto.setId(user.getId());
         dto.setEmail(user.getEmail());
