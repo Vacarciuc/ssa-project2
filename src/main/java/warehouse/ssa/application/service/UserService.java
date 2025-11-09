@@ -54,8 +54,9 @@ public class UserService {
         return userMapper.toResponseDTO(user);
     }
 
-    public List<User> getUsers(){
-        return userRepo.findAll();
+    public List<UserResponseDTO> getUsers(){
+        List<User> users = userRepo.findAll();
+        return userMapper.toResponseDTOList(users);
     }
 
     private String encoderPassword(String rawPass){
